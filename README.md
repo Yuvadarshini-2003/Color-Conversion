@@ -88,15 +88,16 @@ cv2.destoryAllWindows()
 # v) Split and merge HSV Image
 
 import cv2
-house_color_image=cv2.imread('download.jpg')
-h, s, v = cv2.split(house_color_image)
+image = cv2.imread('download.jpg')
+hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+h,s,v = cv2.split(hsv)
 cv2.imshow('H',h)
 cv2.imshow('S',s)
 cv2.imshow('V',v)
-merge_hsv=cv2.merge((h,s,v))
-cv2.imshow('merge_hsv',merge_hsv)
+Merged_HSV = cv2.merge((h,s,v))
+cv2.imshow('Merged HSV Image',Merged_HSV)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv2.destoryAllWindows()
 
 ```
 ## Output:
